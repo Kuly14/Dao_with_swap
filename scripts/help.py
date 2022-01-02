@@ -21,3 +21,10 @@ def get_account(index=None, id=None):
     ):
         return accounts[0]
     return accounts.add(config["wallets"]["from_key"])
+
+
+
+    def deploy_mocks():
+        account = get_account()
+        weth_token = MockWETH.deploy({"from: account"})
+        print("Mocks deployed!")

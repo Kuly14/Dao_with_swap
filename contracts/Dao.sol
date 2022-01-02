@@ -64,7 +64,7 @@ contract Dao is Ownable {
 
 
 	function startVoting() public onlyOwner {
-		require(alreadyUsed == false, "This contract is one use only!")
+		require(alreadyUsed == false, "This contract is one use only!");
 		require(election_state == ELECTION_STATE.CLOSED);
 		votingPeriod = block.timestamp + timePeriod;
 		election_state = ELECTION_STATE.OPEN;
